@@ -29,3 +29,4 @@ data/treated/selected_retrain/lfm_ablation/
 # Python package metadata
 *.egg-info/
 src/vol_surface_generative_model.egg-info/data/raw/
+data/raw/
