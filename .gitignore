@@ -1,0 +1,31 @@
+# macOS / Python / Jupyter
+.DS_Store
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.VolsurfaceForecastEnv/
+**/.VolsurfaceForecastEnv/
+
+# Generated model files
+
+data/treated/cont_vuletic_spx_full.npz
+data/treated/lightsb_spx_full.npz
+data/treated/sbjts_ae_spx_full.npz
+data/treated/sbjts_pca_spx_full.npz
+data/treated/selected_retrain/core_model_surfaces.npz
+data/treated/spx_full_reproducible_run/generated_model_surfaces.npz
+data/treated/spx_full_reproducible_run/generated_surfaces_all_models.npz
+data/treated/spx_full_multiseed/generated_surfaces_all_models_seed_*.npz
+
+# Generated training outputs
+data/treated/spx_full_multiseed/
+data/treated/selected_retrain/lfm_ablation/
+
+# Python package metadata
+*.egg-info/
+src/vol_surface_generative_model.egg-info/data/raw/

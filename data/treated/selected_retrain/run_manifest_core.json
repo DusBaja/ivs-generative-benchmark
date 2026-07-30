@@ -1,0 +1,126 @@
+{
+  "created_utc": "2026-07-22T21:52:03.794604+00:00",
+  "source_cube": "data/treated/vol_surface_spx_long.npz",
+  "source_cube_sha256": "4d7a396fba8add126a66c619cab0105b42f1e1251dcd6db6d1ddfe6b9ea36cdd",
+  "training_mode": "Full retraining only; no pre-existing checkpoint or saved-result loading",
+  "comparison_scope": "Core models; no SBJTS or LightSB",
+  "seed": 42,
+  "latent_hpo_seeds": [
+    42,
+    43,
+    44
+  ],
+  "volgan_reweight_seeds": [
+    352,
+    353,
+    354
+  ],
+  "checkpoint_dependency": "none; checkpoint files are outputs only",
+  "epochs": 1200,
+  "selected_latent_dimension": 7,
+  "n_generated": 5000,
+  "models": [
+    "Data (target)",
+    "L-FM",
+    "Diffusion",
+    "VolGAN",
+    "VolGAN (raw)"
+  ],
+  "checkpoints": {
+    "AE": "data/treated/selected_retrain/ivs_ae_z7_spx_full.pt",
+    "AE_compatibility_alias": "data/treated/selected_retrain/ivs_ae_spx_full.pt",
+    "L_FM": "data/treated/selected_retrain/latent_fm_trigo_z7_spx_full.pt",
+    "L_FM_compatibility_alias": "data/treated/selected_retrain/latent_fm_trigo_spx_full.pt",
+    "DiffPen": "data/treated/selected_retrain/iv_ddpm_spx_full.pt",
+    "VolGAN": "data/treated/selected_retrain/volgan_spx_full.pt"
+  },
+  "latent_dimension_study": {
+    "candidates": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "ae_epochs_per_trial": 300,
+    "fm_epochs_per_trial": 300,
+    "n_generated_per_trial": 512,
+    "n_sliced_wasserstein_projections": 150,
+    "legacy_arbitrage_weight": 0.1,
+    "legacy_arbitrage_tolerance": 0.0001,
+    "trial_results_csv": "data/treated/selected_retrain/latent_dimension_optuna_trials.csv",
+    "summary_csv": "data/treated/selected_retrain/latent_dimension_optuna_summary.csv"
+  },
+  "volgan_reweighting": {
+    "method": "bounded rank reweighting stratified by mean-volatility quantile",
+    "strength": 0.35,
+    "level_bins": 10,
+    "seed_summary": [
+      {
+        "metric": "Global W1",
+        "mean": 0.012521060324957456,
+        "std": 0.0
+      },
+      {
+        "metric": "Sliced W1",
+        "mean": 0.021992783687405704,
+        "std": 0.0
+      },
+      {
+        "metric": "Mean IV",
+        "mean": 0.22421345114707947,
+        "std": 0.0
+      },
+      {
+        "metric": "IV standard deviation",
+        "mean": 0.11551856994628906,
+        "std": 0.0
+      }
+    ]
+  },
+  "figure_policy": {
+    "font_family": "Linux Libertine O with Times-style fallbacks",
+    "font_size_pt": 9,
+    "legends_on_all_figures": true,
+    "savefig_dpi": 300
+  },
+  "generated_surfaces": "data/treated/selected_retrain/core_model_surfaces.npz",
+  "ablation": {
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "trials_csv": "data/treated/selected_retrain/lfm_ablation/lfm_penalty_ablation_trials.csv",
+    "summary_csv": "data/treated/selected_retrain/lfm_ablation/lfm_penalty_ablation_summary.csv"
+  },
+  "figures": [
+    "figs/selected_retrain/LFM_ablation_global_W1.png",
+    "figs/selected_retrain/LFM_ablation_relative_degradation.png",
+    "figs/selected_retrain/LFM_ablation_sliced_W1.png",
+    "figs/selected_retrain/Latent_dimension_arbitrage.png",
+    "figs/selected_retrain/Latent_dimension_metrics.png",
+    "figs/selected_retrain/Latent_dimension_objective.png",
+    "figs/selected_retrain/Models_5quantile.png",
+    "figs/selected_retrain/Models_95quantile.png",
+    "figs/selected_retrain/Models_99quantile.png",
+    "figs/selected_retrain/Models_QQ.png",
+    "figs/selected_retrain/Models_distribution.png",
+    "figs/selected_retrain/Models_skew.png",
+    "figs/selected_retrain/Models_smiles.png"
+  ],
+  "software": {
+    "python": "3.12.2",
+    "numpy": "1.26.4",
+    "torch": "2.2.2",
+    "device": "cpu"
+  },
+  "git_commit": "a0c6f5f140c1559509d66ecd304d9adab30824e8"
+}
