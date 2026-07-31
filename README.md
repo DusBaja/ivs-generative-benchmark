@@ -57,7 +57,7 @@ python -m pip install -e .
 ├── data/
 │   ├── raw/
 │   │   └── SPX_Option_Data/                  # Download from OptionsDX
-│   └── treated/                              # Processed volatility-surface cubes and checkpoints                         # Processed cubes, checkpoints, and norms
+│   └── treated/                              # Processed volatility-surface cubes, checkpoints and derived datasets
 │       └── selected_retrain/
 ├── tests/                                    # Pytest test suite
 ├── figs/                                     # Generated figures
@@ -105,7 +105,7 @@ PYTHONPATH=src python -m constructor_surface_cube --input-format spx-txt --data-
 
 The main Flow Matching models are implemented in:
 
-```
+```text
 src/volsurface_latentFM/
 ├── ivs_autoencoder.py
 ├── latent_models.py
@@ -116,7 +116,7 @@ src/volsurface_latentFM/
 
 The Flow Matching pipeline is currently run from the notebooks:
 
-```
+```text
 Full_models_comparaison.ipynb
 Paper_illustration.ipynb
 ```
@@ -127,7 +127,7 @@ Flow Matching model, then decode generated latent samples back into implied-vola
 
 The main model is a latent Flow Matching model using a time-conditioned latent U-Net. The implemented variants include:
 
-```
+```text
 L-FM linear
 L-FM quadratic
 L-FM VP
