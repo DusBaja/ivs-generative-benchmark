@@ -29,7 +29,6 @@ python -m pip install -e .
 ├── src/                                      # Main Python package and scripts
 │   ├── constructor_surface_cube.py
 │   ├── volsurface_path_bridge.py
-│   ├── vol_surface_generative_model.egg-info/
 │   ├── other_models/                         # Model implementations and training
 │   │   ├── __init__.py
 │   │   ├── HGB_RF.py
@@ -56,8 +55,9 @@ python -m pip install -e .
 │       ├── sbjts_autoencoder_vol_surface.py
 │       └── sbjts_pca_vol_surface.py
 ├── data/
-│   ├── raw/                                  # Original input data
-│   └── treated/                              # Processed cubes, checkpoints, and norms
+│   ├── raw/
+│   │   └── SPX_Option_Data/                  # Download from OptionsDX
+│   └── treated/                              # Processed volatility-surface cubes and checkpoints                         # Processed cubes, checkpoints, and norms
 │       └── selected_retrain/
 ├── tests/                                    # Pytest test suite
 ├── figs/                                     # Generated figures
@@ -67,6 +67,20 @@ python -m pip install -e .
 ├── ablation_study.ipynb                      
 └── pyproject.toml                            # Project configuration and dependencies
 ```
+
+## Data
+
+The experiments in this repository are based on historical SPX option-chain data obtained from **OptionsDX**.
+
+The raw option-chain files are **not included** in this repository. Users should download the corresponding SPX historical option-chain data directly from OptionsDX in accordance with the provider's terms of use.
+
+After downloading, place the files in:
+
+```text
+data/raw/SPX_Option_Data/
+```
+
+The processed datasets and trained model checkpoints included under `data/treated/` are derived from these raw option-chain files and are used to reproduce the experiments presented in this repository.
 
 ## Volatility surface cube building 
 
