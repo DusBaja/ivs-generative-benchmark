@@ -1,5 +1,5 @@
 # Latent Flow Matching for Arbitrage-Aware Implied Volatility Surface Generation
-**One-day-ahead simulation of the volatility surface comparing generative diffusion model, Schrödinger bridge and flow matching**
+
 
 ## Setup
 
