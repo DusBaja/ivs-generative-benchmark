@@ -105,6 +105,10 @@ Full single-line command with all parameters:
 PYTHONPATH=src python -m constructor_surface_cube --input-format spx-txt --data-dir data/raw/SPX_Option_Data --out data/treated/vol_surface_spx_long.npz --verbose
 ```
 
+## Hyperparameter optimisation
+
+The hyperparameters selected through Optuna optimisation are explicitly set to their selected values in the final training configurations. These fixed values are used to reproduce the reported experiments without rerunning the hyperparameter search.
+
 ## Latent Flow Matching models
 
 The main Flow Matching models are implemented in:
