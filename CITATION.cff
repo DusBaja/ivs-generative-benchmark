@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: >-
+  If you use this code, please cite the associated paper:
+  Latent Flow Matching for Arbitrage-Aware Implied Volatility
+  Surface Generation.
+type: software
+title: "Latent Flow Matching for Arbitrage-Aware Implied Volatility Surface Generation"
+authors:
+  - family-names: "Bajalica"
+    given-names: "Dusica"
+  - family-names: "Brooks"
+    given-names: "Oscar"
+  - family-names: "Liu"
+    given-names: "Yating"
+  - family-names: "Ben Tahar"
+    given-names: "Imen"
+repository-code: "https://github.com/DusBaja/ivs-generative-benchmark"
+license: MIT
+preferred-citation:
+  type: conference-paper
+  title: "Latent Flow Matching for Arbitrage-Aware Implied Volatility Surface Generation"
+  authors:
+    - family-names: "Bajalica"
+      given-names: "Dusica"
+    - family-names: "Brooks"
+      given-names: "Oscar"
+    - family-names: "Liu"
+      given-names: "Yating"
+    - family-names: "Ben Tahar"
+      given-names: "Imen"
+  doi: "10.1145/3858063.3858741"
+  year: 2026
