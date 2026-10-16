@@ -1,5 +1,9 @@
 # Latent Flow Matching for Arbitrage-Aware Implied Volatility Surface Generation
 
+This repository contains the code associated with the paper **“Latent Flow Matching for Arbitrage-Aware Implied Volatility Surface Generation”**, accepted at **ICAIF 2026**.
+
+**Paper:** [arXiv:2608.00616](https://arxiv.org/abs/2608.00616)
+
 
 ## Setup
 
@@ -19,7 +23,7 @@ python -m pip install -e .
 - A minimal API to:
   - prepare data (placeholders)
   - fit an unconditional model
-  - generate the possible volatility surface
+  - generate implied volatility surfaces
 - Multiple CLI entrypoints: `other_models`,`volsurface_latentSB` and `volsurface_latentFM`.
 
 ## Project structure
@@ -238,7 +242,7 @@ To reuse an existing VAE checkpoint, add:
 
 #### LightSB
 
-**Inspired from "Light Schrodinger Bride" - A. Korotin, N. Gushchin and E. Burnaev (2024).**
+**Inspired by "Light Schrödinger Bridge" - A. Korotin, N. Gushchin and E. Burnaev (2024).**
 LightSB applies a lightweight Schrödinger Bridge solver in PCA latent space. It fits a diagonal Gaussian-mixture bridge transition, samples candidate latent paths, decodes them back into IV surfaces, and applies the same static-arbitrage selection step.
 
 ```bash
@@ -268,4 +272,14 @@ BLOCK_PLOTS=1 python -m pytest tests/test_vol_surface_check.py -q -s -r s
 BLOCK_PLOTS=1 python -m pytest tests/test_volgan_check.py -q -s -r s
 ```
 
-If the code is ran from a different environment, replace the `python -m pip install -e .` and `python -m pytest ...` commands with the equivalent commands for that environment.
+If the code is run from a different environment, replace the `python -m pip install -e .` and `python -m pytest ...` commands with the equivalent commands for that environment.
+
+
+## Citation
+
+If you use this code in your research, please cite the associated paper.
+Citation metadata is available in [CITATION.cff](CITATION.cff).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
